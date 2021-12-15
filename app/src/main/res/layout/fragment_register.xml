@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.RegisterFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/passwordReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.42" />
+
+        <EditText
+            android:id="@+id/loginReg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Login"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/loginError"
+            app:layout_constraintEnd_toEndOf="@+id/passwordReg"
+            app:layout_constraintStart_toStartOf="@+id/passwordReg" />
+
+        <Button
+            android:id="@+id/signUp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Sign Up"
+            app:layout_constraintEnd_toEndOf="@+id/passwordRepeat"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/passwordRepeat"
+            app:layout_constraintTop_toBottomOf="@+id/repeatPasswordError" />
+
+        <EditText
+            android:id="@+id/passwordRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Repite password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/passwordReg"
+            app:layout_constraintStart_toStartOf="@+id/passwordReg"
+            app:layout_constraintTop_toBottomOf="@+id/passwordError" />
+
+        <TextView
+            android:id="@+id/loginError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/design_default_color_error"
+            app:layout_constraintBottom_toTopOf="@+id/passwordReg"
+            app:layout_constraintStart_toStartOf="@+id/loginReg" />
+
+        <TextView
+            android:id="@+id/passwordError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/design_default_color_error"
+            app:layout_constraintStart_toStartOf="@+id/passwordReg"
+            app:layout_constraintTop_toBottomOf="@+id/passwordReg" />
+
+        <TextView
+            android:id="@+id/repeatPasswordError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/design_default_color_error"
+            app:layout_constraintStart_toStartOf="@+id/passwordRepeat"
+            app:layout_constraintTop_toBottomOf="@+id/passwordRepeat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
