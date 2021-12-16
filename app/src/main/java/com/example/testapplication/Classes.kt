@@ -11,12 +11,24 @@ import androidx.room.PrimaryKey
 import com.example.testapplication.ui.main.RecyclerViewAdapter
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
+import okhttp3.MediaType
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+
+interface Login {
+    @POST("api/account/signin")
+    fun getSession(@Body account :RequestAccount) : Call<ResponseRetrofit>
+}
 
 @Serializable
 data class Error(val field :String, val message :String)
 
 @Serializable
 data class Response(val status :Int, val error : String? = null, val valid :List<Error>? = null, val data :JsonElement? = null)
+
+data class ResponseRetrofit(val status :Int, val data :Session, val error : String? = null, val valid :List<Error>? = null,)
 
 @Serializable
 data class Session(val userId :Int, val login :String, val token :String)
@@ -63,6 +75,14 @@ fun isOnline(context: Context): Boolean {
 
 @Serializable
 data class Comment(val id: Int, val date: Long, val text: String)
+
+class Constants {
+    companion object {
+        val JSON = MediaType.parse("application/json; charset=utf-8")
+        val dateFormat = "dd.MM.yyyy"
+        val DBname = "database"
+    }
+}
 
 class LocalData {
     companion object {

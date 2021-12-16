@@ -10,7 +10,7 @@ import com.example.testapplication.ui.main.SectionsPagerAdapter
 import com.example.testapplication.databinding.ActivityMainBinding
 import com.example.testapplication.ui.main.MainActivity
 
-class MainActivity : AppCompatActivity() {
+class EnterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

@@ -15,31 +15,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/passwordEditText"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/loginLogin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Login"
+            android:hint="@string/loginEditText"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/loginLoginError"
             app:layout_constraintEnd_toEndOf="@+id/passwordLogin"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/passwordLogin" />
+            app:layout_constraintStart_toStartOf="@+id/passwordLogin"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/signUp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Sign In"
+            android:text="@string/signInEditText"
             app:layout_constraintEnd_toEndOf="@+id/passwordLogin"
             app:layout_constraintStart_toStartOf="@+id/passwordLogin"
             app:layout_constraintTop_toBottomOf="@+id/passwordLoginError" />

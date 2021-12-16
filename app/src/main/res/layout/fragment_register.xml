@@ -15,31 +15,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/passwordEditText"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.42" />
+            app:layout_constraintVertical_bias="0.42"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <EditText
             android:id="@+id/loginReg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Login"
+            android:hint="@string/loginEditText"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/loginError"
             app:layout_constraintEnd_toEndOf="@+id/passwordReg"
-            app:layout_constraintStart_toStartOf="@+id/passwordReg" />
+            app:layout_constraintStart_toStartOf="@+id/passwordReg"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <Button
             android:id="@+id/signUp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Sign Up"
+            android:text="@string/signUpEditText"
             app:layout_constraintEnd_toEndOf="@+id/passwordRepeat"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/passwordRepeat"
@@ -51,11 +53,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Repite password"
+            android:hint="@string/repeatPasswordEditText"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="@+id/passwordReg"
             app:layout_constraintStart_toStartOf="@+id/passwordReg"
-            app:layout_constraintTop_toBottomOf="@+id/passwordError" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordError"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <TextView
             android:id="@+id/loginError"

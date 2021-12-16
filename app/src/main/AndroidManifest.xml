@@ -34,7 +34,7 @@
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.TestApplication.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".EnterActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.TestApplication.NoActionBar">

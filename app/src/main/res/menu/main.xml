@@ -4,6 +4,6 @@
     <item
         android:id="@+id/exitAction"
         android:orderInCategory="100"
-        android:title="Exit"
+        android:title="@string/menuButtonExit"
         app:showAsAction="never" />
 </menu>

@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testapplication.Comment
+import com.example.testapplication.Constants
 import com.example.testapplication.LocalData
-import com.example.testapplication.R
 import com.example.testapplication.Response
 import com.example.testapplication.databinding.ActivityPhotoCommentBinding
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
-import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
@@ -21,7 +20,6 @@ import java.util.*
 class PhotoComment : AppCompatActivity() {
 
     private lateinit var binding: ActivityPhotoCommentBinding
-    val JSON = MediaType.parse("application/json; charset=utf-8")
     private val client = OkHttpClient()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +67,7 @@ class PhotoComment : AppCompatActivity() {
         binding.sendButton.setOnClickListener {
             val message = binding.commentText.text.toString()
             val request = Request.Builder()
-                .post(RequestBody.create(JSON, "{\n\"text\":\"$message\"\n}"))
+                .post(RequestBody.create(Constants.JSON, "{\n\"text\":\"$message\"\n}"))
                 .header("Access-Token", LocalData.token!!)
                 .url("http://junior.balinasoft.com/api/image/$idImage/comment")
                 .build()

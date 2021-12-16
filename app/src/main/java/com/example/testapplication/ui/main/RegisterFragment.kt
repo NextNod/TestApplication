@@ -24,11 +24,10 @@ import java.lang.Exception
 
 class RegisterFragment : Fragment() {
     private val client = OkHttpClient()
-    val JSON = MediaType.parse("application/json; charset=utf-8")
 
     private fun run(url: String, json :String) :String {
         val request = Request.Builder()
-            .post(RequestBody.create(JSON, json))
+            .post(RequestBody.create(Constants.JSON, json))
             .url(url)
             .build()
 
@@ -96,7 +95,7 @@ class RegisterFragment : Fragment() {
                         Snackbar.make(root, "Something went wrong(", Snackbar.LENGTH_SHORT).show()
                     }
                 }
-            } else { root.findViewById<TextView>(R.id.repeatPasswordError).text = "Passwords don't match" }
+            } else { root.findViewById<TextView>(R.id.repeatPasswordError).text = getString(R.string.passwordError) }
         }
 
         return root

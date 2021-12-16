@@ -36,7 +36,7 @@ class RecyclerViewAdapter(private val photos: MutableList<Photo>)
         holder.image.setImageBitmap(photos[position].image)
         val date = Date()
         date.date = photos[position].data.toInt()
-        val format = SimpleDateFormat("dd.MM.yyyy")
+        val format = SimpleDateFormat(Constants.dateFormat)
         holder.data.text = format.format(date)
 
         holder.card.setOnClickListener {

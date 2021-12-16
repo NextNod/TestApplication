@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
@@ -23,7 +22,6 @@ import java.net.URL
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -42,11 +40,8 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         LocalData.list = mutableListOf()
-
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -65,7 +60,7 @@ class HomeFragment : Fragment() {
 
             if (!datas.isNullOrEmpty()) {
                 val db = Room
-                    .databaseBuilder(root.context, AppDatabase::class.java, "database")
+                    .databaseBuilder(root.context, AppDatabase::class.java, Constants.DBname)
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
                     .build().dao()
@@ -97,7 +92,7 @@ class HomeFragment : Fragment() {
             }
         } else {
             val db = Room
-                .databaseBuilder(root.context, AppDatabase::class.java, "database")
+                .databaseBuilder(root.context, AppDatabase::class.java, Constants.DBname)
                 .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .build().dao()

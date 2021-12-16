@@ -28,9 +28,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.room.Room
 import com.example.testapplication.*
-import com.example.testapplication.databinding.ActivityMain2Binding
 import kotlinx.serialization.json.Json
-import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
@@ -38,7 +36,8 @@ import java.util.*
 import kotlinx.serialization.encodeToString
 import java.io.ByteArrayOutputStream
 import android.view.MenuItem
-import com.example.testapplication.MainActivity
+import com.example.testapplication.EnterActivity
+import com.example.testapplication.databinding.ActivityMain2Binding
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.decodeFromJsonElement
 
@@ -47,7 +46,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMain2Binding
     private val client = OkHttpClient()
-    private val JSON = MediaType.parse("application/json; charset=utf-8")
     private var getImage = false
     private val REQUEST_CODE = 200
     private var resultImage :Bitmap? = null
@@ -175,7 +173,7 @@ class MainActivity : AppCompatActivity() {
             val json = ImageOut(image, photo.data, photo.lat, photo.lng)
             val request = Request.Builder()
                 .header("Access-Token", LocalData.token!!)
-                .post(RequestBody.create(JSON, Json.encodeToString(json)))
+                .post(RequestBody.create(Constants.JSON, Json.encodeToString(json)))
                 .url("http://junior.balinasoft.com/api/image")
                 .build()
 
@@ -217,7 +215,7 @@ class MainActivity : AppCompatActivity() {
                 clear()
                 apply()
             }
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+            startActivity(Intent(applicationContext, EnterActivity::class.java))
             finish()
         }
         return true

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">TestApplication</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tab_text_1">Login</string>
+    <string name="tab_text_2">Register</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -16,4 +16,15 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_photo_comment">PhotoComment</string>
+    <string name="commentButton">Send</string>
+    <string name="commentEditText">Write comment</string>
+    <string name="passwordEditText">Password</string>
+    <string name="loginEditText">Login</string>
+    <string name="signUpEditText">Sign Up</string>
+    <string name="repeatPasswordEditText">Repeat password</string>
+    <string name="signInEditText">Sign In</string>
+    <string name="nav_home">Photos</string>
+    <string name="nav_gallery">Map</string>
+    <string name="menuButtonExit">Exit</string>
+    <string name="passwordError">Passwords don\'t match</string>
 </resources>
